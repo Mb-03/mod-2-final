@@ -1,5 +1,9 @@
 import { z } from "zod";
 
+// სქემა Submit Feedback - სთვის, rating - ში .int, იმას შვება რო min და max თუ დავუწერ,
+// უკვე იგულისხმება მინიმუმ რიცხვი 1 და მაქსიმუმ 5, ანუ 6 -ს ან 0-ს ვერ ჩაწერ
+
+
 export const feedbackFormSchema = z.object({
   name: z
     .string()

@@ -5,6 +5,11 @@ import {
   FeedbackResponse,
 } from "../types/feedbackTypes";
 
+
+// Api - ში ყველაფერი იგივეა როგორც კჯონტაქტში, safeFetch - ის დახმარებით მარტივად გამოდის,
+// ერთადერთი, editStatus - ში, დამჭირდა მეორე არგუმენტი რო შეგვეძლოს არჩევა სტატუს რითი შევცვალოთ
+
+
 export const fetchAllFeedbacks = async (): Promise<Feedback[]> => {
   return safeFetch<Feedback[]>("/api/feedback/all", {
     method: "GET",
@@ -32,8 +37,12 @@ export const deleteFeedback = async (
   });
 };
 
-export const editStatus = async (feedbackId: string): Promise<Feedback> => {
+export const editStatus = async (
+  feedbackId: string,
+  statusValue: "pending" | "resolved" | "reviewed"
+): Promise<Feedback> => {
   return safeFetch<Feedback>(`/api/feedback/${feedbackId}`, {
     method: "PATCH",
+    body: JSON.stringify({ status: statusValue }),
   });
 };

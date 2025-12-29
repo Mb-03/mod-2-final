@@ -7,6 +7,9 @@ import { feedbackFormSchema } from "../../schemas/feedbackFormSchema";
 import { useSubmitFeedback } from "../../hooks/useSubmitFeedback";
 import { useEffect } from "react";
 
+
+// აქ სტილი იგივე გადმოვიტანე რაც contacts - ში იყო, უბ რალოდ inpute - ები შევცვალე და Rating - ის input- ს დავამატე { valueAsNumber: true }, რო შიგნით რასაც შავწერთ აღიქვას რიცხვად და არა სტრინგათ. 
+
 const FeedbackForm = () => {
   const {
     register,

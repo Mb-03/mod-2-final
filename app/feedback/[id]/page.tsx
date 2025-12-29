@@ -13,6 +13,8 @@ const SingleFeedback = () => {
   const { id } = params;
   const [deleted, setDeleted] = useState(false);
 
+  // აქ id - ვიღებ პარამეტრებიდან, რო მერე წაშლის ფუნქციას გადავცე, deleted state- რო წაშლის მერე ტექსტი გამოვიდეს რო წაიშალა, და უკან დაბრუნების ლინკი გამოჩნდეს, დანარჩენი იგივე რაც ზოგად feedbacks- გვერდზე
+
   const {
     data: singleFeedback,
     isLoading,
@@ -22,11 +24,7 @@ const SingleFeedback = () => {
 
   if (isLoading) return <div className="mt-40 text-center">Loading...</div>;
 
-  if (!singleFeedback) {
-    return (
-      <div className="mt-40 text-center">Feedback deleted successfully</div>
-    );
-  }
+
 
   if (deleted)
     return (
